@@ -3,3 +3,5 @@ __pycache__/
 *.pdf
 venv/
 .DS_Store
+not_used/
+.gradio/
