@@ -1,15 +1,15 @@
 # Course Advisor AI
-Stop spending hours searching through your course syllabi, managing different grade calculations, strategizing across different classes. Instead trust in Course Advisor AI!
+Stop spending hours searching through your course syllabi, managing different grade calculations, and strategizing across different classes. Instead, trust in Course Advisor AI!
 
 
 ## What it Does:
-Course Advisor AI is a RAG chat bot that advises students on course and grade planning and strategies by intelligently integrating relevant information for course syllabi and student's grade summaries. The user flow is as follows: upload course syllabi -> enter some grade data and watch as it gets computed to averages-> ask Course Advisor your pressing questions!
+Course Advisor AI is a RAG chat bot based on Claude 3 and 3.5 that advises students on course policies and grade planning by intelligently integrating relevant information from course syllabi, previous chat history, and student's grade summaries. The user flow is as follows: upload course syllabi -> enter some grade data and watch as it gets computed to averages-> ask Course Advisor your pressing questions!
 
 
 ## Quick Start:
 1. Clone repository:
 git clone https://github.com/KcyOkolo/course-assistant-ai.git
-cd course-assistant-ai
+, then cd course-assistant-ai
 
 2. Create virtual environment to isolate porject dependencies: 
 python3 -m venv venv
@@ -18,20 +18,22 @@ source venv/bin/activate
 3. Install all dependencies: 
 pip install -r requirements.txt
 
-To verify installation: 
+4. To verify installation: 
 python test_setup.py
 
 
-4. Set Up API Key:
-(email me at kyo3@duke.edu for access to my api key. API key also written at beginning of submmited self-evaluation)
-Create `.env` file in root directory and write ANTHROPIC_API_KEY= your copied key
-else:
-Go to console.anthropic.com
-Sign up and navigate to "API Keys"
-Create a new key and copy it & make .env file too
+5. Set Up API Key:
+* To use my API key:
+Email me at kyo3@duke.edu for access. My API key is also written at beginning of my submmited self-evaluation.
+
+* To use your own key:
+Go to console.anthropic.com, sign up and navigate to "API Keys", create a new key 
+
+* Adding the key:
+Create `.env` file in root directory and write ANTHROPIC_API_KEY= {insert API key here}
 
 
-5. Test Course Advisor
+5. Running Course Advisor AI:
 on command line at root directory: python app.py 
 OR
 temporary public url:  https://16664c625912de35ff.gradio.live (if this does not work, run the command line arguement)
@@ -45,9 +47,34 @@ Think of this as the video you would show a fellow ML engineer to explain how yo
 
 
 
-## Evaluation section:
+## Evaluation section: Two Evaluations
 
-*System Prompt Design:
+* Eval 1- Filtering vs Not Filtering Retrieved Chunks:
+I tested RAG retrieval using two methods:
+1. Pass retrieved chunks through a filter. the filter is an array of course names that are relevant to the query
+2. Do not filter retrieved chunks.
+
+The rag system returned the top 4 most relevant chunks. 
+The comparison between filter vs no filter is seen below:
+![alt text](filter_vs_no_filter.png)
+
+
+As seen in the table, filtered RAG retrieval leads to more accurate results. Hence I decided to use filtering.
+
+The filters were created dynamically in the rewrite_query method of integrated_chat.py by making an API call requesting course filters given the user’s query and the user’s conversation history.
+
+The accuracy of course filters is measured in the table below and discussed after:
+
+![alt text](accuracy_agentic_filter.png)
+
+![alt text](filter_prec_recall_f1.png)
+
+In general the method performs quite well for creating a filter of relevant courses to query even when that query is dependent on previous conversation history and is vague. The method never includes unrelated course codes, however, at times it omits related ones (very rarely!) but it happens. Future work can be to test it out on much more questions to get better estimates on Precision, Recall, and F1 scores. This can help guide the prompt engineering I do here to get even more accurate results
+
+
+
+
+* Eval 2 - System Prompt Design:
 I asked my course advisor the following questions which tests its ability to solve math, to use previous history context, to decline unrelated questions, and offer emotional academic related advice.
 
 
@@ -116,6 +143,8 @@ I evaluated the two system prompts (A & B) on the questions above, in table belo
         - If asked for example, "what do I need for an A?", consider multiple paths and focus on high-weight categories
         - Always base advice on the actual data provided
         """
+
+    
 
 
 

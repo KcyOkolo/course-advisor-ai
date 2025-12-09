@@ -32,7 +32,7 @@ class RAGSystem:
         
         print(f"Indexed {len(self.chunks)} chunks!")
     
-    def retrieve(self, question, num_courses, course_filter=None, k=2):
+    def retrieve(self, question, num_courses, course_filter=None, k=3):
         """Given user prompt, retrieves top k relevant chunks """
         if self.index is None:
             return []

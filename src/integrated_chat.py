@@ -153,9 +153,9 @@ class RAGChat:
         rag_query = memory["question"]
         course_filters = memory["courses"] 
 
-        print(f"{rag_query}")
+        #print(f"{rag_query}")
         print(f"{course_filters}")
-        print(f"{memory['context_summary']}")
+        #print(f"{memory['context_summary']}")
 
         if not memory["skip_RAG"]:
             rag_results = self.rag.retrieve(rag_query, len(self.courses), course_filters, k=3)
@@ -211,7 +211,7 @@ class RAGChat:
 
         answer = response.content[0].text
 
-        print(f"{answer}")
+        #print(f"{answer}")
         
         
         self.conversation_history.append({"role": "user", "content": user_message})
@@ -315,6 +315,12 @@ if __name__ == "__main__":
     ]
     
     for q in conversation:
+        print(f"\nStudent: {q}")
+        print("-" * 60)
+        answer = chatbot.chat(q)
+        print(f"Course Advisor: {answer}")
+        print()
+    for q in questions:
         print(f"\nStudent: {q}")
         print("-" * 60)
         answer = chatbot.chat(q)
