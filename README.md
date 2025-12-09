@@ -1,9 +1,9 @@
 # Course Advisor AI
-Stop spending hours searching through your course syllabi, managing different grade calculations, and strategizing across different classes. Instead, trust in Course Advisor AI!
+Stop spending hours searching through your course syllabi, managing different grade calculations, and strategizing across different classes. Instead, trust in Course Advisor AI to take in your data and answer your questions accurately and intelligently!
 
 
 ## What it Does:
-Course Advisor AI is a RAG chat bot based on Claude 3 and 3.5 that advises students on course policies and grade planning by intelligently integrating relevant information from course syllabi, previous chat history, and student's grade summaries. The user flow is as follows: upload course syllabi -> enter some grade data and watch as it gets computed to averages-> ask Course Advisor your pressing questions!
+Course Advisor AI is a RAG chat bot based on Claude 3 and 3.5 that advises students on course policies and grade planning by intelligently integrating relevant information from course syllabi, previous chat history, and student's grade summaries. The user flow is as follows: upload course syllabi -> enter some grade data and watch as it gets computed to averages-> ask Course Advisor your pressing questions! Course Syllabi info is embedded using The all-MiniLM-L6-v2 sentence trasnformer model. Indexes are done use FAISS. Generation is done using Claude. A number of design choices were made throughout to ensure relevant RAG retrieval and context aware multi-turn chat.
 
 
 ## Quick Start:
