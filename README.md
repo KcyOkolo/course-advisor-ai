@@ -58,7 +58,7 @@ I tested RAG retrieval using two methods:
 
 The rag system returned the top 4 most relevant chunks. 
 The comparison between filter vs no filter is seen below:
-![alt text](filter_vs_no_filter.png)
+![alt text](/docs/filter_vs_no_filter.png)
 
 
 As seen in the table, filtered RAG retrieval leads to more accurate results. This makes sense since all course syllabi chunks are encoded into one index. Hence RAG with no filter is likely to retrieve chunks that may seem similar (e.g discusses grade policy and user asks about grade policy) but then is not actually relevant to the course in particular the user asks for.
@@ -68,9 +68,9 @@ Hence I decided to use filtering. In the test above I fed in the system pre-crea
 
 The accuracy of course filters is measured in the table below and discussed after:
 
-![alt text](accuracy_agentic_filter.png)
+![alt text](/docs/accuracy_agentic_filter.png)
 
-![alt text](filter_prec_recall_f1.png)
+![alt text](/docs/filter_prec_recall_f1.png)
 
 In general the method performs quite well for creating a filter of relevant courses to query even when that query is dependent on previous conversation history and is vague. The method never includes unrelated course codes, however, at times it omits related ones (very rarely!) but it happens. Future work can be to test it out on much more questions to get better estimates on Precision, Recall, and F1 scores. This can help guide the prompt engineering I do here to get even more accurate results
 
@@ -92,7 +92,7 @@ My grades for cs316 don’t look too great. Should I withdraw?
 What is the capital of france
 
 I evaluated the two system prompts (A & B) on the questions above, in table below
-![alt text](prompt_comparison.png)
+![alt text](/docs/prompt_comparison.png)
 
 
     Prompt B: final system prompt chat method of integrated_chat.py (chain of thought prompting used and I emphasize being concise)
