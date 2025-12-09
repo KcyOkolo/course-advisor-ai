@@ -1,11 +1,5 @@
 __pycache__/
-*.py[cod]
-venv/
-*.egg-info/
-data/raw/*.pdf
-data/processed/
 .env
-*.log
-.vscode/
-.idea/
+*.pdf
+venv/
 .DS_Store
