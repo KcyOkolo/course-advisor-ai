@@ -1,11 +1,10 @@
-Installation Instructions for COURSE-ADVISOR-AI
+# Installation Instructions for COURSE-ADVISOR-AI
 
 Prerequisites:
-The following must be installed:
+The following must be installed before hand:
 - Python 3.9+
 - pip
 - Git
-- Anthropic API Key
 
 Installation Steps
 
@@ -13,7 +12,7 @@ Installation Steps
 git clone https://github.com/KcyOkolo/course-assistant-ai.git
 cd course-assistant-ai
 
-2. Create virtual environment to isolate porject dependencies: 
+2. Create virtual environment to isolate project dependencies: 
 python3 -m venv venv
 source venv/bin/activate
 
@@ -21,10 +20,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 This will install:
-gradio - Used to building the UI
+gradio - Used to build the UI
 anthropic - Claude API Client
 sentence-transformers - Text embedding models
-faiss-cpu - vector similarity search
+faiss-cpu - Indexing and Vector similarity search
 pyumupdf - PDF processing
 
 To verify installation: 

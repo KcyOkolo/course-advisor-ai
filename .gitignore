@@ -1,6 +1,5 @@
 __pycache__/
 .env
-*.pdf
 venv/
 .DS_Store
 not_used/

@@ -198,7 +198,7 @@ class RAGChat:
         user_prompt += f"\n Student question: {user_message}    Answer:"""
         
 
-        # Call Claude
+        # API call to claude
         response = self.client.messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=500,

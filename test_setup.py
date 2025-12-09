@@ -1,7 +1,7 @@
 # AI generated: Claude Code"
 
 """
-Quick test script to verify your Course Assistant setup
+Quick test script to verify  Course Adbisor setup
 """
 
 import os
