@@ -7,6 +7,10 @@ Course Advisor AI is a RAG chat bot based on Claude 3 and 3.5 that advises stude
 
 
 ## Quick Start:
+
+You can access course advisor ai without installing locally! temporary public url:  https://6c99bf50a0f08caefe.gradio.live 
+
+* To Install Locally:
 1. Clone repository:
 git clone https://github.com/KcyOkolo/course-assistant-ai.git
 , then cd course-assistant-ai
@@ -35,17 +39,14 @@ Create `.env` file in root directory and write ANTHROPIC_API_KEY= {insert API ke
 
 5. Running Course Advisor AI:
 on command line at root directory: python app.py 
-OR
-temporary public url:  https://16664c625912de35ff.gradio.live (if this does not work, run the command line arguement)
+
 
 ## Video Links:
-Demo-> 3-5 minutes
-There is no reason to show any code in this video – you can use slides with visualizations or diagrams to provide motivation, show the running application, show experimental results, etc.
+Demo-> (use any of the working links. both have same video)
+[Watch the video](./videos/User%20Demo%20-%20Course%20Advisor%20AI.mov)
 
-Technical Walkthrough-> 5-10 minutes. 
-Think of this as the video you would show a fellow ML engineer to explain how you accomplished what you did. This video should help orient a grader to understand how your code works and where the machine learning concepts are being applied. It should also help a grader understand what was challenging about the project and where the significant technical contributions can be found
-
-
+Technical Walkthrough-> (use any of the working links. both have same video)
+[Watch the video](./videos/Technical%20Walkthrough%20-%20Course%20Advisor%20AI.mov)
 
 ## Evaluation section: Two Evaluations
 
@@ -59,9 +60,10 @@ The comparison between filter vs no filter is seen below:
 ![alt text](filter_vs_no_filter.png)
 
 
-As seen in the table, filtered RAG retrieval leads to more accurate results. Hence I decided to use filtering.
+As seen in the table, filtered RAG retrieval leads to more accurate results. This makes sense since all course syllabi chunks are encoded into one index. Hence RAG with no filter is likely to retrieve chunks that may seem similar (e.g discusses grade policy and user asks about grade policy) but then is not actually relevant to the course in particular the user asks for.
 
-The filters were created dynamically in the rewrite_query method of integrated_chat.py by making an API call requesting course filters given the user’s query and the user’s conversation history.
+Hence I decided to use filtering. In the test above I fed in the system pre-created filters. However at run time the filters could be anything. Hence I set my project to create filters dynamically in the rewrite_query method of integrated_chat.py by making an API call requesting course filters given the user’s query, the user’s current courses, and the user’s conversation history.
+
 
 The accuracy of course filters is measured in the table below and discussed after:
 

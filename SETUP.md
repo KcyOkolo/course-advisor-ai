@@ -7,7 +7,9 @@ The following must be installed before hand:
 - Git
 
 ## Installation Steps
+* note: You can access course advisor ai without installing locally! temporary public url:  https://6c99bf50a0f08caefe.gradio.live 
 
+* To install locally:
 1. Clone repository:
 * git clone https://github.com/KcyOkolo/course-assistant-ai.git
 * cd course-assistant-ai
@@ -40,7 +42,9 @@ Go to console.anthropic.com, sign up and navigate to "API Keys", create a new ke
 * Adding the key:
 Create `.env` file in root directory and write ANTHROPIC_API_KEY= {insert API key here} 
 
-5. Sample Syllabi :
+5. Run the app: on command line at root directory: python app.py 
+
+* Sample Syllabi :
 I have included sample syllabi in data/duke_syllabi
 These syllabi were not used to train. No training or finetuning was done in this project
 They are only for testing/providing input to RAG (if interacting on command line level)
