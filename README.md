@@ -42,10 +42,10 @@ on command line at root directory: python app.py
 
 
 ## Video Links:
-Demo-> (use any of the working links. both have same video)
+Demo-> (video file too large for git. so linked google drive)
 https://drive.google.com/file/d/15vSmWzalWxh2K2NyWmN9Y0fbkwgeEwjS/view?usp=sharing
 
-Technical Walkthrough-> (use any of the working links. both have same video)
+Technical Walkthrough-> (video file too large for git. so linked google drive)
 https://drive.google.com/file/d/1Q_FJCPVJahCdVBgc_8WBfmf16H_UJiuz/view?usp=sharing
 
 
