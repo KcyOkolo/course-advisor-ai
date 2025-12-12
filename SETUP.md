@@ -1,5 +1,9 @@
 # Installation Instructions for COURSE-ADVISOR-AI
 
+* note: You can access course advisor ai without installing locally! temporary public url:  https://26ae51bfa850fec414.gradio.live (expires on Dec 19th)
+
+* To install locally:
+
 ## Prerequisites:
 The following must be installed before hand:
 - Python 3.9+
@@ -7,9 +11,6 @@ The following must be installed before hand:
 - Git
 
 ## Installation Steps
-* note: You can access course advisor ai without installing locally! temporary public url:  https://6c99bf50a0f08caefe.gradio.live 
-
-* To install locally:
 1. Clone repository:
 * git clone https://github.com/KcyOkolo/course-assistant-ai.git
 * cd course-assistant-ai
