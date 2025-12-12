@@ -1,3 +1,5 @@
+# AI generated: Claude Code
+
 import gradio as gr
 from dotenv import load_dotenv
 from extraction.pdf_to_text_chunks import process_syllabus
@@ -186,9 +188,8 @@ def add_grade_to_course(course_dropdown, category_input, score_input, max_score_
         return "Please enter valid numbers for score and max score", gr.update(), gr.update(), gr.update(), session_state
 
 
-# Build the Gradio interface
+
 with gr.Blocks(title="Course Assistant") as app:
-    # Create session state
     session_state = gr.State(initialize_session())
     
     with gr.Row():
